@@ -1,4 +1,4 @@
-public interface Stack<E> 
+public interface iStack<E> 
 {
 
    public void push(E item);

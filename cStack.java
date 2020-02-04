@@ -5,7 +5,7 @@
  * Controlador de Stack
  *
  */
-public class cStack  implements Stack{
+public class Stack  implements iStack{
 
 	@Override
 	public void push(Object item) {
