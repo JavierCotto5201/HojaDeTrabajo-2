@@ -1,4 +1,9 @@
-
+/**
+ * 
+ * @author Diana Zaray Corado #191025 & Javier Alejandro Cotto #19324
+ * Implementacion de Calculadora
+ *
+ */
 public class Calculadora implements iCalculadora {
 
 	@Override
