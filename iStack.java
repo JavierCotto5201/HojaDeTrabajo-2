@@ -14,10 +14,12 @@ public interface iStack<E>
    // pre: stack is not empty
    // post: top value (next to be popped) is returned
    
+   public int size();
+   // post: returns the number of elements in the stack
+   
    public boolean empty();
    // post: returns true if and only if the stack is empty
    
-   public int size();
-   // post: returns the number of elements in the stack
+   
 
 }
