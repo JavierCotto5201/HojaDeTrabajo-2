@@ -55,7 +55,7 @@ public class LeerArchivos {
 	}
 	
 	public static void main(String[] args) throws IOException {
-        muestraContenido("C:\\Users\\Javier Cotto\\Desktop\\UVG Trabajos/archivo.txt");
+        muestraContenido("C:\\Users\\claudia\\Desktop\\Algortimos y Estructuras de Datos\\HT_2\\src/Calculos.txt.");
     }
 	
    }
