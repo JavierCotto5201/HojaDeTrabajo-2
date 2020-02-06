@@ -10,51 +10,73 @@ public class pCalculadora <E> {
 		
 		Stack<String> stack = new Stack<String>();
 		iCalculadora calculadora = new Calculadora();
-		
+		boolean error = false;
 		String cadena;
 		int operando1, operando2;
-		
+
 		try{
 			FileReader f = new FileReader("C:\\Users\\claudia\\Desktop\\Algortimos y Estructuras de Datos\\HT_2\\src/Calculos.txt");
-		
+
 	      BufferedReader b = new BufferedReader(f);
 	      while((cadena = b.readLine())!=null) {
-	    	 
+
 	    	System.out.println("La operacion a realizar es: " + cadena);
 	    	String[] cadLista = cadena.split(" ");
-	    	
+
 	    	for(int i=0; i<cadLista.length;i++){
-	    		
+
 	    		if(cadLista[i].equals("+")) {
-	    			operando1 = Integer.valueOf(stack.pop());
-					operando2 = Integer.valueOf(stack.pop());
-					stack.push(String.valueOf(calculadora.sumar(operando1,operando2)));
+	    			try {
+	    				operando1 = Integer.valueOf(stack.pop());
+						operando2 = Integer.valueOf(stack.pop());
+						stack.push(String.valueOf(calculadora.sumar(operando1,operando2)));
+	    			}catch(Exception e) {
+	    				error = true;
+	    				}
 	    		}else 
 	    			if(cadLista[i].equals("-")) {
+	    				try {
 	    				operando1 = Integer.valueOf(stack.pop());
 						operando2 = Integer.valueOf(stack.pop());
 						stack.push(String.valueOf(calculadora.restar(operando1,operando2)));
+						}catch(Exception e) {
+							error = true;
+						}
+	    				
 	    		}else 
 	    			if(cadLista[i].equals("*")) {
+	    				try {
 	    				operando1 = Integer.valueOf(stack.pop());
 						operando2 = Integer.valueOf(stack.pop());
 						stack.push(String.valueOf(calculadora.multiplicar(operando1,operando2)));
+						}catch(Exception e) {
+							error = true;
+						}
 		    	}else 
 		    		if(cadLista[i].equals("/")) {
+		    			try {
 		    			operando1 = Integer.valueOf(stack.pop());
 						operando2 = Integer.valueOf(stack.pop());
 						stack.push(String.valueOf(calculadora.dividir(operando1,operando2)));
+						}catch(Exception e) {
+							error = true;
+						}
 	    		}else
 	    			stack.push(cadLista[i]);
 	    	}
 	   	   	stack.push(cadena);
 	   	   	stack.pop();
-	    	System.out.println("El resultado es: " + stack.pop());
+	   	   	
+	   	   	if(error != true)
+	   	   		System.out.println("El resultado es: " + stack.pop());
+	   	   	else
+	   	   		System.out.println("La operacion no se pudo realizar");
 	      }
 	      b.close();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	      
 		
 	}
 }
