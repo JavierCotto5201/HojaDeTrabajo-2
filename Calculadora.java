@@ -30,7 +30,7 @@ public class Calculadora implements iCalculadora {
 	public int restar(int operando1, int operando2) {
 		// TODO Auto-generated method stub
 		int resta = 0;
-		resta = operando1 + operando2;
+		resta = operando1 - operando2;
 		return resta;
 	}
 

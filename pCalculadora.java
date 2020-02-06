@@ -57,7 +57,7 @@ public class pCalculadora <E> {
 		    			try {
 		    			operando1 = Integer.valueOf(stack.pop());
 						operando2 = Integer.valueOf(stack.pop());
-						stack.push(String.valueOf(calculadora.dividir(operando1,operando2)));
+						stack.push(String.valueOf(calculadora.dividir(operando2,operando1)));
 						}catch(Exception e) {
 							error = true;
 						}
