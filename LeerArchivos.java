@@ -42,8 +42,11 @@ public class LeerArchivos {
 		    		if(cadLista[i].equals("/")) {
 		    			v=pila.pop();
 	    				u=pila.pop();
+	    				if(Integer.parseInt(u)!=0) {
 	    				res=String.valueOf(Integer.valueOf(v) / Integer.valueOf(u));
 	    				pila.push(res);
+	    				}else
+	    					System.out.println("Se esta realizando una divison por 0");
 	    		}else
 	    			pila.push(cadLista[i]);
 	    	}
@@ -55,7 +58,8 @@ public class LeerArchivos {
 	}
 	
 	public static void main(String[] args) throws IOException {
-        muestraContenido("C:\\Users\\claudia\\Desktop\\Algortimos y Estructuras de Datos\\HT_2\\src/Calculos.txt.");
+		//Se tiene que cambiar la direccion para que lea el archivo
+        muestraContenido("C:\\Users\\Javier Cotto\\Desktop\\UVG Trabajos/archivo.txt");
     }
 	
    }
